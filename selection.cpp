@@ -10,15 +10,18 @@ void swap(T& a, T& b){
 
 template<class T>
 void selectionSort(T* array, int size){
-    
+    // target is the value to be campared with
+    // minIndex is to be updated with the location of new smaller value
     int target, minIndex, location;
 
     for(target=0; target<size-1; target++){
 
-        minIndex = target;
+        minIndex = target;  // initialize minIndex with target
 
         for(location=target+1; location<size-1; location++){
+            // condition: if element smaller than current minIndex found
             if(array[minIndex]>array[location]){
+                // update minIndex
                 minIndex = location;
             }
         }
